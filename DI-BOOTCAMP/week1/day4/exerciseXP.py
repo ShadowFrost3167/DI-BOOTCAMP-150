@@ -185,6 +185,12 @@ print("your total is: ", black_mail)
 
 # age = i
 # wrote this initially to build the structure for myself visually of what i was doing
+
+# Ask a family the age of each person who wants a ticket.
+
+# Store the total cost of all the family’s tickets and print it out.
+
+
 final_price = 0
 family_age_group = []
 
@@ -218,13 +224,10 @@ print(f"total price is: {final_price}")
 
 
 
-# Ask a family the age of each person who wants a ticket.
-
-# Store the total cost of all the family’s tickets and print it out.
-
-
 # A group of teenagers are coming to your movie theater and want to watch a movie that is restricted for people between the ages of 16 and 21.
+
 # Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
+
 # At the end, print the final list.
 
 ################################################################################################
