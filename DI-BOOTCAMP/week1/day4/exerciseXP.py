@@ -228,7 +228,21 @@ print(f"total price is: {final_price}")
 
 # Given a list of names, write a program that asks teenager for their age, if they are not permitted to watch the movie, remove them from the list.
 
+teenagers = ["Ofir", "Nadav", "Nimrod", "Noa", "Eidan"]
+
+oldEnough = []
+
+for teen in teenagers:
+    age = int(input(f"how old is {teen}? "))
 # At the end, print the final list.
+    print(f"{teen} is {age} years old.")
+
+    if 16 <= age <=21:
+        oldEnough.append(teen)
+
+print(f"only {' ,'.join(oldEnough)} are allowed in")
+        
+    
 
 ################################################################################################
 
@@ -236,14 +250,29 @@ print(f"total price is: {final_price}")
 # Instructions
 # Using the list below :
 
-# sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
 
 # The deli has run out of pastrami, use a while loop to remove all occurrences of “Pastrami sandwich” from sandwich_orders.
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
 # We need to prepare the orders of the clients:
 # Create an empty list called finished_sandwiches.
+finished_sandwiches = []
 # One by one, remove each sandwich from the sandwich_orders while adding them to the finished_sandwiches list.
+while sandwich_orders: 
+    sandwich = sandwich_orders.pop(0)
+    finished_sandwiches.append(sandwich)
+    print(f"I made your {sandwich}")
+
+    #goes through the sandwich_orders and takes each first index (string) in the list except for pastrami which has been removed and adds it to the finished sandwhiches one by one
+
 # After all the sandwiches have been made, print a message listing each sandwich that was made, such as:
 # I made your tuna sandwich
 # I made your avocado sandwich
 # I made your egg sandwich
 # I made your chicken sandwich
+
+
+
+
+
