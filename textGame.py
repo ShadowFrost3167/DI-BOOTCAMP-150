@@ -1,6 +1,5 @@
 import os
 #to clear cmd
-
 import sys
 import time
 def barryFlash(text, speed = .0420):
@@ -11,8 +10,6 @@ def barryFlash(text, speed = .0420):
     sys.stdout.write("\n")
     time.sleep(.9)
 #for gameover() specifically
-
-
 def typeWriter(text, speed = .06):
     for char in text:
         sys.stdout.write(char)
@@ -25,8 +22,6 @@ def typeWriter(text, speed = .06):
     time.sleep(.9)
     #pauses for one sec after lines are printed
 
-    
-        
 run = True
 menu = True
 play = False
@@ -45,7 +40,7 @@ def invalidChoice():
     typeWriter("ATTENTION")
     
 def wipeClean():
-    os.system("cls")
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def gameOver():
@@ -300,6 +295,9 @@ def secondMorning():
         secondMorning()
 #begin day2
 
+def startWork():
+    pass
+
 
 def cafeEnter():
     typeWriter("You rush out your door after slipping on your jeans in record time")
@@ -356,7 +354,6 @@ def carbBreaky():
 
 def proteinBreaky():
     pass
-
 
 while run:
     while menu:
