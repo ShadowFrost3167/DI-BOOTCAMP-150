@@ -76,6 +76,7 @@ def wake():
 def vayihiOr():
     typeWriter("ILLUMINATION!")
     typeWriter("You can now see the furniture in your room and the posters on your wall, your cat is sleeping on your desk")
+    typeWriter("OPTIONS: ")
     typeWriter("1. Go to your cat")
     typeWriter("2. Go to bathroom")
 
