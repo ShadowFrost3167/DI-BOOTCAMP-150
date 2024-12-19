@@ -3,6 +3,15 @@ import os
 
 import sys
 import time
+def barryFlash(text, speed = .0420):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(speed)
+    sys.stdout.write("\n")
+    time.sleep(.9)
+#for gameover() specifically
+
 
 def typeWriter(text, speed = .06):
     for char in text:
@@ -15,7 +24,8 @@ def typeWriter(text, speed = .06):
     #adds new line
     time.sleep(.9)
     #pauses for one sec after lines are printed
-        
+
+    
         
 run = True
 menu = True
@@ -36,6 +46,37 @@ def invalidChoice():
     
 def wipeClean():
     os.system("cls")
+
+
+def gameOver():
+    wipeClean()
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    print("G A M E     O V E R")
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    time.sleep(2)
+    wipeClean()
+    barryFlash(" Y O U     D I E D")
+    typeWriter("Play again?")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Play Again")
+    typeWriter("2. Give Up, Be Weak")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        wake()
+    elif choice == "2":
+        wipeClean()
+        barryFlash("Too bad, better luck next time!")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash("window will close now...")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        exit()
+
 
 def save():
     #VV--stats--VV
@@ -99,7 +140,7 @@ def endedBeforeBegan():
     typeWriter("you suffocate on your pillow and die")
     typeWriter("guess you shouldn't have been so lazy")
     typeWriter("try again")
-    exit()
+    gameOver()
 #GO
 
 def catto():
@@ -166,7 +207,7 @@ def feedCat():
     typeWriter("no one comes to your assistance on the drafty cold floor")
     typeWriter("you die of exposure, shouldn't have been so soft eh?")
     typeWriter("try again")
-    exit()
+    gameOver()
 
 def tinkle():
     print("You go to your bathroom and relieve yourself")
@@ -202,7 +243,7 @@ def pneumonia():
     print("You shiver as you settle into bed and even though the cat attempts to warm you in an effort to save you from yourself")
     print(f"The damage is already done {name}, it's over... ")
     print("You died of pneumonia and overexposure to cold weather...")
-    exit()
+    gameOver()
 #youDie
 def dayTwo():
     global gameProgress
@@ -211,6 +252,9 @@ def dayTwo():
     LVL += 1
     save()
     wipeClean()
+    typeWriter(". . . ")
+    typeWriter(". . . ")
+    typeWriter("S A V I N G ")
     typeWriter(". . . ")
     typeWriter(". . . ")
     typeWriter("S A V I N G ")
@@ -235,8 +279,84 @@ def dayTwo():
         dayTwo()
 #checkpoint
 def secondMorning():
-    typeWriter("THIS IS SECOND DAY")
+    typeWriter("The sun shines through the dust caked window to your left")
+    typeWriter("You look at the clock above the mantle and notice the time")
+    typeWriter("   9 A. M. ?!?!?!")
+    typeWriter("You usually leave at   8 : 30 ")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Hurry to the cafe for work!")
+    typeWriter("2. Message and say you'll be late")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        cafeEnter()
+    elif choice == "2":
+        wipeClean()
+        lateWorker()
+    else:
+        wipeClean()
+        invalidChoice()
+        secondMorning()
 #begin day2
+
+
+def cafeEnter():
+    typeWriter("You rush out your door after slipping on your jeans in record time")
+    typeWriter("Your rusted bike on the porch creaks and groans as you pedal as fast as possible")
+    typeWriter("You reach to work and enter before any customers have arrived")
+    typeWriter("SUAVE +2")
+    global SUAVE
+    SUAVE += 2
+    save()
+    typeWriter("Your coworker Ephram who your close to challenges you to your morning competition")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Play Rock Paper Scissors?")
+    typeWriter("2. Decline, you're too busy! People might be there any moment.")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        #rockPaperScissors()
+    elif choice == "2":
+        wipeClean()
+        startWork()
+    else:
+        wipeClean()
+        invalidChoice()
+        cafeEnter()
+
+def lateWorker():
+    typeWriter("There's no way you'll make it in time")
+    typeWriter("You don't want to look slovenly on top of be tardy...")
+    typeWriter("You take out your phone and message your boss informing him you'll be a bit late")
+    typeWriter("SUAVE -1")
+    global SUAVE
+    SUAVE -= 1
+    save()
+    typeWriter("You trudge downstairs and eat breakfast what will you eat?")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Cofee and blueberry muffin, great for a long day of work!")
+    typeWriter("2. Scrambled eggs with OJ, classic breakfast.")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        carbBreaky()
+    elif choice == "2":
+        wipeClean()
+        proteinBreaky()
+    else:
+        wipeClean()
+        invalidChoice()
+        lateWorker()
+
+def carbBreaky():
+    pass
+
+def proteinBreaky():
+    pass
+
 
 while run:
     while menu:
