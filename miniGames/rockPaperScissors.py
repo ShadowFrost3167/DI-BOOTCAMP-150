@@ -2,6 +2,9 @@ import random
 import os
 import time
 
+from gameStory.features import wipeClean
+from work import backtowork
+
 def wipeClean():
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -46,7 +49,4 @@ wipeClean()
 print("GG! We can play again tomorrow!")
 time.sleep(1)
 
-exit()
-
-
-
+backtowork()
