@@ -1,4 +1,4 @@
-from gameStory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
+from gamestory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
 
 from level2 import dayTwo
 
