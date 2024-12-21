@@ -1,26 +1,8 @@
-from gamestory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
+from gameStory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
 
 from level2 import dayTwo
 
-def wake():
-    gameProgress = "dayOne"
-    typeWriter("You wake up in a dark room.")
-    typeWriter("OPTIONS: ")
-    typeWriter("1. Put on those lights!")
-    typeWriter("2. Roll over and return to slumber")
 
-    choice = input("> ")
-    if choice == "1":
-        wipeClean()
-        vayihiOr()
-    elif choice == "2":
-        wipeClean()
-        endedBeforeBegan()
-    else:
-        wipeClean()
-        invalidChoice()
-        wake()
-#vayihiOr + endedBeforeBegan
 
 def vayihiOr():
     typeWriter("ILLUMINATION!")
