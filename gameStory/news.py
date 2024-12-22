@@ -1,4 +1,5 @@
 import textwrap
+
 print("")
 article = """
 New Bench Installed in Town Square\n
