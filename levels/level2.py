@@ -57,8 +57,6 @@ def secondMorning():
 #begin day2
 
 
-
-
 def cafeEnter():
     typeWriter("You rush out your door after slipping on your jeans in record time")
     typeWriter("Your rusted bike on the porch creaks and groans as you pedal as fast as possible")
