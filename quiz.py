@@ -27,7 +27,7 @@ def dailyQuiz():
 
 def checkQuiz(answer, guess):
     if answer == guess:
-        print("CORRECT!")
+        print("\033[92mCORRECT!\033[0m")
         return 1
     else:
         print("WRONG")

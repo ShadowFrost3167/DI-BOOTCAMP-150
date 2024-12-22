@@ -1,6 +1,6 @@
-from gameStory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
 from level3 import dayThree
-
+import time
+from features import wipeClean, typeWriter, barryFlash, invalidChoice, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress
 def dayTwo():
     global gameProgress
     gameProgress = "dayTwo"
@@ -34,6 +34,35 @@ def dayTwo():
         invalidChoice()
         dayTwo()
 #checkpoint
+def gameOver():
+    wipeClean()
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    print("G A M E     O V E R")
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    time.sleep(2)
+    wipeClean()
+    barryFlash(" Y O U     D I E D")
+    typeWriter("Play again?")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Play Again")
+    typeWriter("2. Give Up, Be Weak")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        dayTwo
+
+    elif choice == "2":
+        wipeClean()
+        barryFlash("Too bad, better luck next time!")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash("window will close now...")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        exit()
 
 def secondMorning():
     typeWriter("The sun shines through the dust caked window to your left")

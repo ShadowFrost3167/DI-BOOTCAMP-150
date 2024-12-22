@@ -1,10 +1,59 @@
 import sys
-
-from gameStory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
-
+from features import wipeClean, typeWriter, invalidChoice, barryFlash, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress
 from level2 import dayTwo
+import time
 
+# name = ""
 
+def gameOver():
+    wipeClean()
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    print("G A M E     O V E R")
+    print("- - - - - - - - - - -")
+    print("- - - - - - - - - - -")
+    time.sleep(2)
+    wipeClean()
+    barryFlash(" Y O U     D I E D")
+    typeWriter("Play again?")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Play Again")
+    typeWriter("2. Give Up, Be Weak")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        wake()
+
+    elif choice == "2":
+        wipeClean()
+        barryFlash("Too bad, better luck next time!")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash("window will close now...")
+        barryFlash(". . .    . . .    . . .")
+        barryFlash(". . .    . . .    . . .")
+        exit()
+
+def wake():
+    gameProgress = "dayOne"
+    typeWriter("You wake up in a dark room.")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Put on those lights!")
+    typeWriter("2. Roll over and return to slumber")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        vayihiOr()
+    elif choice == "2":
+        wipeClean()
+        endedBeforeBegan()
+    else:
+        wipeClean()
+        invalidChoice()
+        wake()
+#vayihiOr + endedBeforeBegan
 
 def vayihiOr():
     typeWriter("ILLUMINATION!")
@@ -82,7 +131,7 @@ def pneumonia():
     print("You go to dry your hands only to realize: ... ... ... your roommate hasn't left any dry towels in the bathroom")
     print("You make you way back to the room with cold hands AND feet since some water also fell on your sock laden feet")
     print("You shiver as you settle into bed and even though the cat attempts to warm you in an effort to save you from yourself")
-    print(f"The damage is already done {name}, it's over... ")
+    print(f"The damage is already done, it's over... ")
     print("You died of pneumonia and overexposure to cold weather...")
     gameOver()
 #youDie

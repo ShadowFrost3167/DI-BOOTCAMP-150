@@ -61,7 +61,7 @@ def playAgain():
 
 #primary function for slot machine:   
 
-def main():
+def slotty():
     balance = 100
 
     #welcome message:
@@ -125,6 +125,6 @@ def main():
     print("\n\n")
         
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__slotty__':
+    slotty()
 
