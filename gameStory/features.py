@@ -54,7 +54,6 @@ LVL = 1
 SUAVE = 5
 gameProgress = "dayOne" #default start
 
-
 def invalidChoice():
     typeWriter("Thats not one of the choices!")
     typeWriter("...")
