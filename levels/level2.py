@@ -1,4 +1,5 @@
 from gameStory.features import typeWriter, wipeClean, invalidChoice, gameOver, save, SUAVE, LVL, name
+from level3 import dayThree
 
 def dayTwo():
     global gameProgress
@@ -194,3 +195,34 @@ def eatBreaky():
 #rockpaperscissors + startwork
 
 
+def lastCustomer():
+    typeWriter("The door jingles as you finish the last order")
+    typeWriter("Your romantic interest has entered!")
+    typeWriter("Vibrant hair and skin, you're lost in their looks")
+    typeWriter("They come up to the counter and smile at you shyly")
+    typeWriter("What do you want to do?")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Ask them out! Tomorrow your'e free!  Y O L O")
+    typeWriter("2. Shyly take their order")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        dayThree()
+    elif choice == "2":
+        wipeClean()
+        dieAlone()
+    else:
+        wipeClean()
+        invalidChoice()
+        lastCustomer()
+#dieAlone + dayThreeTranz
+
+def dieAlone():
+    typeWriter("You smile shyly at them and ask for their order.")
+    typeWriter("The timidness puts them off and they sneer at you in disgust")
+    typeWriter("You are weak, and boring.")
+    typeWriter("Years pass in monotony")
+    typeWriter("You grow old and die alone")
+    typeWriter("Guess you shouldn't have been such a wimp...")
+    gameOver()
