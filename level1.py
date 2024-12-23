@@ -1,8 +1,9 @@
 import sys
-from features import wipeClean, typeWriter, invalidChoice, barryFlash, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress
+from features import wipeClean, typeWriter, invalidChoice, barryFlash, save, run, menu, aboutMe, play, LVL, SUAVE, name
 from level2 import dayTwo
 import time
 
+print("__name__ in level1:", __name__)
 # name = ""
 
 def gameOver():
@@ -36,6 +37,7 @@ def gameOver():
         exit()
 
 def wake():
+    global gameProgress
     gameProgress = "dayOne"
     typeWriter("You wake up in a dark room.")
     typeWriter("OPTIONS: ")
@@ -106,10 +108,10 @@ def catto():
 #grabCat + petCat 
 
 def tinkle():
-    print("You go to your bathroom and relieve yourself")
-    print("OPTIONS: ")
-    print("1. Go directly back to your room, it's too cold to wash atm")
-    print("2. Ewwwwwww... Wash your hands!")
+    typeWriter("You go to your bathroom and relieve yourself")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Go directly back to your room, it's too cold to wash atm")
+    typeWriter("2. Ewwwwwww... Wash your hands!")
 
     choice = input("> ")
     if choice == "1":
@@ -145,6 +147,8 @@ def grabCat():
     dayTwo()
 #day2Tranz
 def petCat():
+    global name
+    print(f"before pet cat name is {name}")
     typeWriter("As your fingers sink into the soft thick fur she purrs")
     typeWriter("She creaks an eye open and yawns before standing an all fours and stretching")
     typeWriter("She stretches up an down and all around as you comb her fur with your fingers")
@@ -184,8 +188,9 @@ def feedCat():
 #GO
 
 def backToBed():
-    print("You go back to your room and see the cat curled up in bed waiting for your return")
-    print("You settle into the blankets and relax into the warm comfort of being dry with a warm body next to you")
-    print("You drift off until the morning")
+    typeWriter("You go back to your room and see the cat curled up in bed waiting for your return")
+    typeWriter("You settle into the blankets and relax into the warm comfort of being dry with a warm body next to you")
+    typeWriter("You drift off until the morning")
+    time.sleep(2)
     dayTwo()
 #day2Tranz

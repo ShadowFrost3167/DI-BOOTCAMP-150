@@ -60,6 +60,9 @@ def workBegin(sentenceList):
         print("\033[93m You tried your best but today was rough... \033[0m")
     else:
         print("\033[91m WHAT HAPPENED?!?! \033[0m")
+        
 
-workBegin(sentenceList)
+if __name__ == "__main__":
+    workBegin(sentenceList)
+    exit()
 

@@ -111,4 +111,8 @@ answers = [[
      "4. The Mediterranean Sea"]]
 
 
-dailyQuiz()
+
+if __name__ == "__main__":
+    dailyQuiz()
+    exit()
+

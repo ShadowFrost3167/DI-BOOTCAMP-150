@@ -1,24 +1,36 @@
-from features import wipeClean, typeWriter, barryFlash, invalidChoice, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress
+from features import wipeClean, typeWriter, barryFlash, invalidChoice, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress, name
 import time
 from level1 import wake, endedBeforeBegan
-import level2
-import level3
+from level2 import secondMorning
+from level3 import dayThree
+
+
+print("__name__ in main:", __name__)
 
 def save():
+
+    global name
     #VV--stats--VV
     list = [
-        # name, 
+        name,
         str(LVL),
         str(SUAVE),
         gameProgress
     ]
 
-    f = open("load.txt", "w")
+    print("Saving data from main:", list)
+    time.sleep(3)
+
+
+    with open("load.txt", "w") as f:
     #loads save file or creates new save file
 
-    for item in list:
-        f.write(item + "\n")
-    f.close()
+        for item in list:
+            if item is not None:
+                f.write(item + "\n")
+            else:
+                print("none main")
+                f.write("None\n")
 
 def gameOver():
     wipeClean()
@@ -38,7 +50,7 @@ def gameOver():
     choice = input("> ")
     if choice == "1":
         wipeClean()
-        wake()
+        menu = True
 
     elif choice == "2":
         wipeClean()
@@ -50,81 +62,97 @@ def gameOver():
         barryFlash(". . .    . . .    . . .")
         exit()
 
-while run:
-    while menu:
-        wipeClean()
-        print("1. NEW GAME")
-        print("2. LOAD GAME")
-        print("3. ABOUT GAME")
-        print("4. QUIT GAME")
+def runGame():
+    global name
+    play = False
+    run = True
+    menu = True
+    aboutMe = False
+    name = None
 
-        if aboutMe:
-            print("this is a simple text based game created in python for the hackathon project")
-            print("please choose to: START, LOAD, OR QUIT with #1, #2, #4")
-            aboutMe = False
-            choice = ""
-            input("> ")
-
-        else:
-            choice = input("# ")
-
-        if choice == "1":
+    while run:
+        while menu:
             wipeClean()
-            menu = False
-            play = True
-            save()
-            wipeClean()
+            print("1. NEW GAME")
+            print("2. LOAD GAME")
+            print("3. ABOUT GAME")
+            print("4. QUIT GAME")
 
-            wake()
-            
-            
-            
-        elif choice == "2":
-            
-            f = open("load.txt", "r")
-            load_list = f.readlines()
+            if aboutMe:
+                print("this is a simple text based game created in python for the hackathon project")
+                print("please choose to: START, LOAD, OR QUIT with #1, #2, #4")
+                aboutMe = False
+                choice = ""
+                input("> ")
 
-            #save file data
-            
-            LVL = load_list[0][:-1]
-            SUAVE = load_list[1][:-1]
-            gameProgress = load_list[2][:-1]
+            else:
+                choice = input("# ")
 
-            typeWriter(f"Welcome back player \n Level: {LVL} \n Suave Rating: {SUAVE} \n Day: {gameProgress}")
-            typeWriter("game start...")
-
-            if gameProgress == "dayOne":
+            if choice == "1":
+                wipeClean()
+                name = input("What's your name? ")
+                print(f"Debug: name entered is {name}")  # Debug print to check name
+                save()
+                time.sleep(2)
+                menu = False
+                play = True
+                save()
+                wipeClean()
                 wake()
-            elif gameProgress == "dayTwo":
-                print("THIS IS THE SECOND GAME")
+                
+                
+                
+            elif choice == "2":
+                
+                f = open("load.txt", "r")
+                load_list = f.readlines()
 
-            #transition to game
-            menu = False
-            play = True
-            
+                #save file data
+                name = load_list[0][:-1]
+                LVL = load_list[1][:-1]
+                SUAVE = load_list[2][:-1]
+                gameProgress = load_list[3][:-1]
 
-        elif choice == "3":
-            aboutMe = True
+                print(f"Debug: loaded name is {name}")  # Debug print to check loaded name
+
+
+                typeWriter(f"Welcome back player \n Level: {LVL} \n Suave Rating: {SUAVE} \n Day: {gameProgress}")
+                typeWriter("game start...")
+
+                if gameProgress == "dayOne":
+                    wake()
+                elif gameProgress == "dayTwo":
+                    secondMorning()
+                elif gameProgress == "dayThree":
+                    dayThree()
+
+                #transition to game
+                menu = False
+                play = True
+                
+
+            elif choice == "3":
+                aboutMe = True
+                
             
+            elif choice == "4":
+                quit()
+
+
+            else:
+                print("HEY BLOCKHEAD! THATS NOT AN OPTION!")
+
+        while play:
         
-        elif choice == "4":
-            quit()
 
+            dest = input("# ")
 
-        else:
-            print("HEY BLOCKHEAD! THATS NOT AN OPTION!")
+            if dest == "0":
+                play = False
+                menu = True
+                
 
-    while play:
-       
-
-        dest = input("# ")
-
-        if dest == "0":
-            play = False
-            menu = True
-            save()
-
-#vvv--starts actual game all functions are just defined above that fit together to make game--vvv 
+    #vvv--starts actual game all functions are just defined above that fit together to make game--vvv 
 if __name__ == "__main__":
-    wake()
+    runGame()
 

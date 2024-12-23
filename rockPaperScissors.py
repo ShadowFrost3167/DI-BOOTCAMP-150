@@ -63,12 +63,13 @@ def play_again():
             print("DIGITS ONLY")
 
 
-def main():
+def roShamBo():
     play_game()
     play_again()
 
 if __name__ == "__main__":
-    main()
+    roShamBo()
+    exit()
 
 
 

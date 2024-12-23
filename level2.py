@@ -1,5 +1,11 @@
-from level3 import dayThree
+
 import time
+
+from rockPaperScissors import roShamBo
+from level3 import dayThree
+from work import workBegin, sentenceList
+from quiz import dailyQuiz
+from news import newspaper
 from features import wipeClean, typeWriter, barryFlash, invalidChoice, save, run, menu, aboutMe, play, LVL, SUAVE, gameProgress
 def dayTwo():
     global gameProgress
@@ -24,6 +30,7 @@ def dayTwo():
 
     choice = input("> ")
     if choice == "1":
+        save()
         wipeClean()
         exit()
     elif choice == "2":
@@ -103,10 +110,16 @@ def cafeEnter():
     choice = input("> ")
     if choice == "1":
         wipeClean()
-        #rockPaperScissors()
+        roShamBo()
+        startWork()
+        print("finished work")
+        lastCustomer()
+        
     elif choice == "2":
         wipeClean()
         startWork()
+        lastCustomer()
+        
     else:
         wipeClean()
         invalidChoice()
@@ -114,7 +127,11 @@ def cafeEnter():
 #rockPapeScis + startwork
 
 def startWork():
-    pass
+    typeWriter("Suddently your regulars begin to flood the store")
+    typeWriter("Type their orders out perfectly to fill them out.")
+    workBegin(sentenceList)
+    wipeClean()
+    
 
 def lateWorker():
     typeWriter("There's no way you'll make it in time")
@@ -154,12 +171,12 @@ def carbBreaky():
     choice = input("> ")
     if choice == "1":
         wipeClean()
-        print("NEWS")
-        #dailyNews()
+        newspaper()
+        eatBreaky()
     elif choice == "2":
         wipeClean()
-        print("QUIZ")
-        #dailyQuiz()
+        dailyQuiz()
+        eatBreaky()
     else:
         wipeClean()
         invalidChoice()
@@ -186,43 +203,17 @@ def proteinBreaky():
     choice = input("> ")
     if choice == "1":
         wipeClean()
-        print("NEWS")
-        #dailyNews()
+        newspaper()
+        eatBreaky()
     elif choice == "2":
         wipeClean()
-        print("QUIZ")
-        #dailyQuiz()
+        dailyQuiz()
+        eatBreaky()
+        
     else:
         wipeClean()
         invalidChoice()
         carbBreaky()
-
-
-def eatBreaky():
-    typeWriter("You eat breakfast and start to head to work fully nourished")
-    typeWriter("Your rusted bike on the porch groans slightly as you ease into a rythm")
-    typeWriter("You reach work and see one of the regulars ordering")
-    typeWriter("As you clock in as your coworker Ephram takes her order")
-    typeWriter("After he finishes he turns to you and grins impishly")
-    typeWriter("Tired eh? mmm Maybe a freindly game of ~ro-sham-bo~ will do the trick!")
-    typeWriter("OPTIONS: ")
-    typeWriter("1. Play Rock Paper Scissors?")
-    typeWriter("2. Decline, you're too busy! People might be there any moment.")
-
-    choice = input("> ")
-    if choice == "1":
-        wipeClean()
-        #rockPaperScissors()
-    elif choice == "2":
-        wipeClean()
-        startWork()
-    else:
-        wipeClean()
-        invalidChoice()
-        cafeEnter()
-#will be called in a minigame
-#rockpaperscissors + startwork
-
 
 def lastCustomer():
     typeWriter("The door jingles as you finish the last order")
@@ -246,6 +237,39 @@ def lastCustomer():
         invalidChoice()
         lastCustomer()
 #dieAlone + dayThreeTranz
+
+def eatBreaky():
+    typeWriter("You eat breakfast and start to head to work fully nourished")
+    typeWriter("Your rusted bike on the porch groans slightly as you ease into a rythm")
+    typeWriter("You reach work and see one of the regulars ordering")
+    typeWriter("As you clock in as your coworker Ephram takes her order")
+    typeWriter("After he finishes he turns to you and grins impishly")
+    typeWriter("Tired eh? mmm Maybe a freindly game of ~ro-sham-bo~ will do the trick!")
+    typeWriter("OPTIONS: ")
+    typeWriter("1. Play Rock Paper Scissors?")
+    typeWriter("2. Decline, you're too busy! People might be there any moment.")
+
+    choice = input("> ")
+    if choice == "1":
+        wipeClean()
+        roShamBo()
+        startWork()
+        lastCustomer()
+        
+    elif choice == "2":
+        wipeClean()
+        startWork()
+        lastCustomer()
+        
+    else:
+        wipeClean()
+        invalidChoice()
+        cafeEnter()
+#will be called in a minigame
+#rockpaperscissors + startwork
+
+
+
 
 def dieAlone():
     typeWriter("You smile shyly at them and ask for their order.")

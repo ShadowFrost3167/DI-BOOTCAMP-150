@@ -1,4 +1,6 @@
 import textwrap
+import time
+from features import wipeClean
 
 print("")
 article = """
@@ -30,3 +32,8 @@ wrapped_paragraphs = [textwrap.fill(paragraph, width=90) for paragraph in paragr
 formatted_article = "\n\n".join(wrapped_paragraphs)
 
 print(formatted_article)
+
+def newspaper():
+    wipeClean()
+    print(formatted_article)
+    time.sleep(5)

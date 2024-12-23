@@ -3,11 +3,13 @@ import os
 import sys
 import time
 
-# name = ""
+name = None
 run = True
 menu = True
 play = False
 aboutMe = False
+
+
 
 LVL = 1
 SUAVE = 5
@@ -89,17 +91,23 @@ def wipeClean():
 
 
 def save():
+    global name
     #VV--stats--VV
     list = [
-        # name, 
+        name,
         str(LVL),
         str(SUAVE),
         gameProgress
     ]
 
-    f = open("load.txt", "w")
+    print("Saving data from features:", list)
+    time.sleep(3)
+    with open("load.txt", "w") as f:
     #loads save file or creates new save file
 
-    for item in list:
-        f.write(item + "\n")
-    f.close()
+        for  item in list:
+            if item is not None:
+                f.write(item + "\n")
+            else:
+                print("name = none")
+                f.write("None\n")

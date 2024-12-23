@@ -125,6 +125,7 @@ def slotty():
     print("\n\n")
         
 
-if __name__ == '__slotty__':
+if __name__ == '__main__':
     slotty()
+    exit()
 
