@@ -1,4 +1,8 @@
 #hackathonRepository2024Dec
+EDIT:
+CURRENT BUGS: SAVE file not saving data
+
+to run the file: run the main.py in terminal
 
 Welcome, this is the README.md for my hackathon project.
 
