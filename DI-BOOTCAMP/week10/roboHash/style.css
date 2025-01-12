@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #0f1b119d;
+    
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('robot.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4; 
+    z-index: -1; 
+    transform: scaleX(-1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #3f5240;
+    color: #9ab489;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 31px;
+    font-family: 'Silkscreen', 'Arial Black', sans-serif;
+}
+
+
+#search-box {
+    padding: 10px;
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.robot-container {
+    display: flex;               
+    flex-wrap: wrap;              
+    justify-content: center;    
+    gap: 20px;                  
+    padding: 20px;
+}
+
+/* Flexbox Items (Cards) */
+.card {
+    background-color: #50614673;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;                
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    filter: brightness(0.9); /* Darken the card */
+}
+
+.card img {
+    width: 100%;                  
+    border-radius: 5px;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+h1 {
+    color: rgba(228, 204, 154, 0.89);
+    /* font-family:  */
+}
+
+
+.no-results-message {
+    font-size: 50px;            
+    color: #f3bc08;             
+    text-align: center;
+    position: fixed;            
+    top: 50%;                   
+    left: 50%;                  
+    transform: translate(-50%, -50%);  
+    font-family: 'Silkscreen', 'Arial Black', sans-serif;
+    z-index: 9999;              
+    display: none;              
+    width: 100%;                
+    text-transform: uppercase;  
+    letter-spacing: 5px;        
+}
